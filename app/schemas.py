@@ -91,6 +91,7 @@ class EntregaCrear(BaseModel):
     checklist_manual: Optional[list[ChecklistItemPlantillaIn]] = None  # o arma un checklist manual
     fecha_programada: Optional[datetime] = None
     instaladores_ids: list[str] = []
+    folio_pedido_microsip: Optional[str] = None  # folio del pedido importado de Microsip, si aplica
 
 
 class EntregaChecklistItemOut(BaseModel):
@@ -143,6 +144,7 @@ class FirmaCrear(BaseModel):
 class EntregaOut(BaseModel):
     id: str
     folio: str
+    folio_pedido_microsip: Optional[str]
     cliente_nombre: str
     cliente_direccion: Optional[str]
     cliente_telefono: Optional[str]

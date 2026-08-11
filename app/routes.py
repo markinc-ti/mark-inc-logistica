@@ -170,8 +170,19 @@ def crear_entrega(
     db: Session = Depends(get_db),
     usuario: Usuario = Depends(requiere_rol(RolUsuario.admin, RolUsuario.ventas_almacen)),
 ):
+    if datos.folio_pedido_microsip:
+        existente = db.query(Entrega).filter_by(
+            folio_pedido_microsip=datos.folio_pedido_microsip
+        ).first()
+        if existente:
+            raise HTTPException(
+                400,
+                f"El pedido {datos.folio_pedido_microsip} ya fue importado como {existente.folio}",
+            )
+
     entrega = Entrega(
         folio=generar_folio(db),
+        folio_pedido_microsip=datos.folio_pedido_microsip,
         cliente_nombre=datos.cliente_nombre,
         cliente_direccion=datos.cliente_direccion,
         cliente_telefono=datos.cliente_telefono,

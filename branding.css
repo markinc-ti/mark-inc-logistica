@@ -1,0 +1,27 @@
+/* Paleta de marca — Logística (Mark·Inc)
+   Independiente de los colores de la app de tickets (rojo #D8192F / gris).
+   Azul = confianza/control, Naranja = movimiento/acción — típico de apps
+   de logística y entrega. */
+
+:root {
+  --logistica-azul-primario:   #1B4F91; /* botones principales, header, links */
+  --logistica-azul-oscuro:     #123A6B; /* hover, texto sobre fondo claro */
+  --logistica-azul-claro:      #E8F0FB; /* fondos suaves, tarjetas */
+
+  --logistica-naranja:         #FF7A29; /* acciones/alertas positivas, badges "en camino" */
+  --logistica-naranja-oscuro:  #DB5F14; /* hover del naranja */
+
+  --logistica-gris-texto:      #33404F;
+  --logistica-gris-claro:      #F4F6F9;
+  --logistica-blanco:          #FFFFFF;
+
+  /* Colores sugeridos por estatus de entrega */
+  --estatus-pendiente:   #9AA5B1; /* gris */
+  --estatus-asignada:    #1B4F91; /* azul */
+  --estatus-en-camino:   #FF7A29; /* naranja */
+  --estatus-en-proceso:  #F2A900; /* ámbar */
+  --estatus-entregada:   #2E9E5B; /* verde */
+  --estatus-rechazada:   #D8192F; /* rojo (solo para error/rechazo, no es color de marca) */
+  --estatus-reagendada:  #6B4FBB; /* morado */
+  --estatus-cancelada:   #6B7280; /* gris oscuro */
+}

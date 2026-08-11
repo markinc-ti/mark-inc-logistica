@@ -116,6 +116,7 @@ class Entrega(Base):
 
     id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
     folio = Column(String(20), unique=True, nullable=False)
+    folio_pedido_microsip = Column(String(30), unique=True, nullable=True, index=True)
 
     cliente_nombre = Column(String(200), nullable=False)
     cliente_direccion = Column(Text, nullable=True)
